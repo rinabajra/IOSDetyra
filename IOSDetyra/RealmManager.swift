@@ -9,8 +9,9 @@ import RealmSwift
 
 class RealmManager: ObservableObject{
     private(set) var localRealm: Realm?
-    @Published private(set) var tasks: [Task]=[]
-    
+    @Published private(set) var toDoTasks: [Task]=[]
+    @Published private(set) var completedTasks: [Task]=[]
+
     init(){
         openRealm()
     }
@@ -33,11 +34,11 @@ class RealmManager: ObservableObject{
         }
     }
     
-    func addTask(taskTitle: String){
+    func addTask(taskTitle: String, description: String, image: String){
         if let localRealm = localRealm{
             do{
                 try localRealm.write{
-                    let newTask  = Task(value: ["title": taskTitle,"completed":false])
+                    let newTask  = Task(value: ["title": taskTitle, "descr": description, "image": image, "completed":false])
                     localRealm.add(newTask)
                     getTasks()
                     print("Added new task to Realm : \(newTask)")
@@ -51,9 +52,17 @@ class RealmManager: ObservableObject{
     func getTasks(){
         if let localRealm = localRealm {
             let allTasks = localRealm.objects(Task.self).sorted(byKeyPath: "completed")
-            tasks = []
-            allTasks.forEach{ task in
-                              tasks.append(task)
+            toDoTasks = []
+            completedTasks = []
+            
+            allTasks.forEach{
+           task in
+                if(task.completed){
+                    completedTasks.append(task)
+                }else{
+                    toDoTasks.append(task)
+                }
+                
             }
         }
     }
@@ -83,18 +92,18 @@ class RealmManager: ObservableObject{
             do{
                 let taskToDelete =  localRealm.objects(Task.self).filter(NSPredicate(format: "id == %@",id))
                  guard !taskToDelete.isEmpty else{ return }
-                
+
                 try localRealm.write{
                     localRealm.delete(taskToDelete)
                     getTasks()
                     print("Deleted task with id : \(id)")
-                    
+
                 }
-                
+
             } catch {
-                
+
                 print("Error deleting task\(id) from Realm \(error)")
-                
+
             }
         }
     }

@@ -7,36 +7,42 @@ import SwiftUI
 
 struct AddTaskView: View {
     @EnvironmentObject var realmManager: RealmManager
-    @State private var title: String = ""
-    @Environment(\.dismiss) var dismiss
-    
     var body: some View {
         VStack(alignment:.leading,spacing: 20){
-            Text("Create a new task").font(.title3).bold()
+            Text("Add a new therapie to your daily to do ones").font(.title3)
                 .frame(maxWidth:.infinity,alignment: .leading)
-            TextField("Enter your task here",text: $title)
-                .textFieldStyle(.roundedBorder)
-            
-            Button {
-                if(title != ""){
-                realmManager.addTask(taskTitle: title)
+          
+            Text("All therapies").bold().foregroundColor(.gray).padding(.vertical,5)
+       
+            List{
+                ForEach(therapyList, id: \.id) {
+                    task in
                     
+                    TherapyCard(therapy:  task)
+                          
+                    }
+                  
                 }
-                
-                dismiss()
-            } label: {
-                Text("Add task")
-                    .foregroundColor(.white)
-                    .padding()
-                    .padding(.horizontal)
-                    .background(Color(hue: 0.328,saturation: 0.796, brightness: 0.408))
-                    .cornerRadius(30)
+              
+             .listRowSeparator(.hidden)
+            .onAppear{
+                UITableView.appearance().backgroundColor = UIColor.clear
+                UITableViewCell.appearance().backgroundColor = UIColor.clear
             }
+                
+            
             Spacer()
+            
+            
         }
         .padding(.top,40)
         .padding(.horizontal)
-        .background(Color(hue: 0.86,saturation: 0.141, brightness: 0.972))
+        .background(
+            LinearGradient(gradient: Gradient(colors:
+                [.green.opacity(0.2),
+                .blue.opacity(0.5)]),
+                startPoint: .top, endPoint: .bottom)
+        )
     }
 }
 

@@ -7,17 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "78AAA5DD-F2CB-4487-8F1C-900689C822EE"
-            shouldBeEnabled = "Yes"
+            uuid = "1D563AA2-7CE6-4051-A0F6-791BECE9F085"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "IOSDetyra/Views/ContentView.swift"
+            filePath = "IOSDetyra/RealmManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "deleteTask(id:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

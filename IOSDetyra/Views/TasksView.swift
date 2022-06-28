@@ -9,26 +9,44 @@ struct TasksView: View {
     @EnvironmentObject var realmManager: RealmManager
     
     var body: some View {
-        VStack(alignment: .center){
-            Text("My tasks")
-                .font(.largeTitle)
-                .bold()
-                .padding()
-                .font(Font.headline)
-                .foregroundColor(.blue.opacity(0.5))
-                .frame(maxWidth:.infinity, alignment:.center)
-            
-            List{
-                ForEach(realmManager.tasks, id: \.id){
-                    
+        ScrollView{
+        VStack(alignment: .leading){
+            Text("To Do Therapies").bold().foregroundColor(.gray).padding(.vertical,5)
+            if(!realmManager.toDoTasks.isEmpty){
+
+                ForEach(realmManager.toDoTasks, id: \.id) {
                     task in
                     if(!task.isInvalidated){
-                        TaskRow(task: task.title, completed:
-                                    task.completed)
-                            .onTapGesture {
-                                realmManager.updateTask(id: task.id, completed:
-                                    !task.completed)
-                            }.swipeActions(edge: .trailing){
+                        TaskRow(task: task)
+                            .swipeActions(edge: .trailing){
+                                Button(role: .destructive){
+                                    realmManager.deleteTask(id: task.id)
+                                } label: {
+                                    Label("Delete",systemImage: "Trash")
+                                }
+                            }
+                         
+                    }
+                  
+                
+              
+            }
+
+            }
+                
+            else{
+                Text("You don't have any therapies to do").foregroundColor(.gray.opacity(0.6))
+                
+            }
+            
+            Text("Completed Therapies").bold().foregroundColor(.gray).padding(.vertical,5)
+            if(!realmManager.completedTasks.isEmpty){
+  
+                ForEach(realmManager.completedTasks, id: \.id) {
+                    task in
+                    if(!task.isInvalidated){
+                        TaskRow(task: task)
+                            .swipeActions(edge: .trailing){
                                 Button(role: .destructive){
                                     realmManager.deleteTask(id: task.id)
                                 } label: {
@@ -39,15 +57,15 @@ struct TasksView: View {
                     }
                   
                 }
-                .listRowSeparator(.hidden)
-            }
-            .onAppear{
-                UITableView.appearance().backgroundColor = UIColor.clear
-                UITableViewCell.appearance().backgroundColor = UIColor.clear
+              
+
+            
+            } else{
+                Text("You haven't completed any therapies yet").foregroundColor(.gray.opacity(0.6))
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-    
+        .frame(maxWidth: .infinity, maxHeight: .infinity,alignment: .top)
+        }
     }
 }
 
