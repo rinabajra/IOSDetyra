@@ -13,7 +13,7 @@ struct ContentView: View {
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.gray]
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.gray]
-        UINavigationBar.appearance().barTintColor = .systemGray
+        UINavigationBar.appearance().barTintColor = .systemMint
     }
     
     var body: some View {
@@ -21,7 +21,7 @@ struct ContentView: View {
         ZStack(alignment: .bottomTrailing){
             TasksView()
                 .environmentObject(realmManager)
-                .padding(.top, 10)
+        
             
             SmallAddButton()
                 .padding()
@@ -29,8 +29,7 @@ struct ContentView: View {
                     showAddTaskView.toggle()
                 }
         }.sheet(isPresented: $showAddTaskView){
-            AddTaskView()
-                .environmentObject(realmManager)
+            //TODO
         }
          .frame( maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
         .background(
@@ -40,7 +39,7 @@ struct ContentView: View {
                 startPoint: .top, endPoint: .bottom)
         )
             .navigationTitle(Text("My Daily Therapies"))
-                .foregroundColor(.black.opacity(0.5))
+                .foregroundColor(.gray)
                 .frame(alignment:.center)
               
                 .toolbar {

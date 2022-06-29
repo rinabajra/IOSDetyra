@@ -15,5 +15,5 @@ struct Therapy: Identifiable {
 }
 
 var therapyList = [Therapy(title: "fdfsdsd", descr: "dsafggag", image: "gdcgs", completed: false),
-             Therapy(title: "fdsfsdfdfsdfsdf", descr: "dsafggsdgsgag", image: "gdcgs" , completed: false)
+             Therapy(title: "fdsfsdfdfsdfsdf", descr: "dsafggGSGDSDSDsdgsgag", image: "gdcgs" , completed: false)
                 ]
