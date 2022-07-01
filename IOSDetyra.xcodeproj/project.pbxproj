@@ -15,6 +15,9 @@
 		3B1AD259286190E90066BE50 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3B1AD258286190E90066BE50 /* RealmSwift */; };
 		3B1AD25B286191190066BE50 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1AD25A286191190066BE50 /* RealmManager.swift */; };
 		3B1AD25D286726CE0066BE50 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1AD25C286726CE0066BE50 /* Task.swift */; };
+		3B86FB4D286F9C36004FF088 /* MyDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B86FB4C286F9C36004FF088 /* MyDetailsView.swift */; };
+		3B86FB4F286F9D6E004FF088 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B86FB4E286F9D6E004FF088 /* Quote.swift */; };
+		3B86FB51286FA0D7004FF088 /* TherapyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B86FB50286FA0D7004FF088 /* TherapyView.swift */; };
 		3B8C13B8285BEDC80086EFC0 /* IOSDetyraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C13B7285BEDC80086EFC0 /* IOSDetyraApp.swift */; };
 		3B8C13BA285BEDC80086EFC0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C13B9285BEDC80086EFC0 /* ContentView.swift */; };
 		3B995333286A856A008E192A /* Therapy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B995332286A856A008E192A /* Therapy.swift */; };
@@ -30,6 +33,9 @@
 		3B1AD25A286191190066BE50 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		3B1AD25C286726CE0066BE50 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		3B1AD25E2867C2BA0066BE50 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../../../../Downloads/background.jpg; sourceTree = "<group>"; };
+		3B86FB4C286F9C36004FF088 /* MyDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailsView.swift; sourceTree = "<group>"; };
+		3B86FB4E286F9D6E004FF088 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		3B86FB50286FA0D7004FF088 /* TherapyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyView.swift; sourceTree = "<group>"; };
 		3B8C13B4285BEDC80086EFC0 /* IOSDetyra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSDetyra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B8C13B7285BEDC80086EFC0 /* IOSDetyraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSDetyraApp.swift; sourceTree = "<group>"; };
 		3B8C13B9285BEDC80086EFC0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +64,8 @@
 				3B1AD24B286127B80066BE50 /* TasksView.swift */,
 				3B8C13B9285BEDC80086EFC0 /* ContentView.swift */,
 				3B1AD25128612ADE0066BE50 /* AddTaskView.swift */,
+				3B86FB4C286F9C36004FF088 /* MyDetailsView.swift */,
+				3B86FB50286FA0D7004FF088 /* TherapyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -116,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				3B995332286A856A008E192A /* Therapy.swift */,
+				3B86FB4E286F9D6E004FF088 /* Quote.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,8 +206,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B1AD25D286726CE0066BE50 /* Task.swift in Sources */,
+				3B86FB51286FA0D7004FF088 /* TherapyView.swift in Sources */,
 				3B8C13BA285BEDC80086EFC0 /* ContentView.swift in Sources */,
 				3B1AD25228612ADE0066BE50 /* AddTaskView.swift in Sources */,
+				3B86FB4D286F9C36004FF088 /* MyDetailsView.swift in Sources */,
+				3B86FB4F286F9D6E004FF088 /* Quote.swift in Sources */,
 				3B1AD24C286127B80066BE50 /* TasksView.swift in Sources */,
 				3B1AD25428612D050066BE50 /* SmallAddButton.swift in Sources */,
 				3B8C13B8285BEDC80086EFC0 /* IOSDetyraApp.swift in Sources */,
