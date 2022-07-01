@@ -1,6 +1,7 @@
 # Detyra ne platformen IOS
 
 Aplikacioni eshte krijuar per platformen IOS ne gjuhen programuese Swift ne kuader te lendes "Programimi i paisjeve mobile".
+Ky aplikacion ka per qellim qe perdoruesit ti aplikoj, ti klasifikoje dhe te kete qasje ne Terapite fizike ne menyre me kreative dhe me te lehte per te
 
 ### Kerkesat e projektit:
 
