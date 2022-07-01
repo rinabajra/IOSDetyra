@@ -2,7 +2,6 @@
 //  Quote.swift
 //  IOSDetyra
 //
-//  Created by Ninety L.L.C. on 1.7.22.
 //
 
 import Foundation
