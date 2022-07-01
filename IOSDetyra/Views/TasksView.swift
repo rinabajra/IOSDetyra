@@ -13,7 +13,7 @@ struct TasksView: View {
         ScrollView(){
         VStack(alignment: .center){
             HStack{
-                Text("To Do Therapies").bold().foregroundColor(.gray).padding(.top,25).padding(.horizontal,10)
+                Text("To Do Therapies").bold().foregroundColor(.gray).padding(.top,5).padding(.horizontal,10)
                 
                 if(!realmManager.toDoTasks.isEmpty){
                 Image(systemName:"trash")
