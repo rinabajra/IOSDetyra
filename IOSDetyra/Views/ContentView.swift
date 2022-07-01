@@ -9,7 +9,9 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var realmManager  = RealmManager()
     @State private var showAddTaskView = false
+    @State var showAlert: Bool = false
 
+    
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.gray]
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.gray]
@@ -23,28 +25,30 @@ struct ContentView: View {
                 .environmentObject(realmManager)
         
             
+          
             SmallAddButton()
                 .padding()
                 .onTapGesture {
                     showAddTaskView.toggle()
                 }
-        }.sheet(isPresented: $showAddTaskView){
-            //TODO
-        }
-         .frame( maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-        .background(
-            LinearGradient(gradient: Gradient(colors:
+            }.sheet(isPresented: $showAddTaskView){
+            AddTaskView()
+                .environmentObject(realmManager)
+            }
+            .frame( maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+            .background(
+                LinearGradient(gradient: Gradient(colors:
                 [.green.opacity(0.2),
                 .blue.opacity(0.5)]),
                 startPoint: .top, endPoint: .bottom)
-        )
-            .navigationTitle(Text("My Daily Therapies"))
+            )
+            .navigationTitle(Text("My Therapies"))
                 .foregroundColor(.gray)
                 .frame(alignment:.center)
               
                 .toolbar {
                     NavigationLink {
-                        AddTaskView()
+                      MyDetailsView()
                             .environmentObject(realmManager)
                     } label: {
                         Image(systemName:"book")
@@ -53,9 +57,9 @@ struct ContentView: View {
                         )
                     }
                 }
-                .navigationViewStyle(StackNavigationViewStyle())
+               
         }
-
+        .navigationViewStyle(StackNavigationViewStyle())
         
     }
         

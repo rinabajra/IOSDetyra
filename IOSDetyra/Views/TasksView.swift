@@ -7,45 +7,76 @@ import SwiftUI
 
 struct TasksView: View {
     @EnvironmentObject var realmManager: RealmManager
-    
+    @State var showAlert: Bool = false
+
     var body: some View {
-        ScrollView{
-        VStack(alignment: .leading){
-            Text("To Do Therapies").bold().foregroundColor(.gray).padding(.vertical,5)
-            
+        ScrollView(){
+        VStack(alignment: .center){
+            HStack{
+                Text("To Do Therapies").bold().foregroundColor(.gray).padding(.top,25).padding(.horizontal,10)
+                
+                if(!realmManager.toDoTasks.isEmpty){
+                Image(systemName:"trash")
+                    .foregroundColor(.red)
+                    .padding()
+                    .onTapGesture {
+                            showAlert = true
+                       
+                    }
+                    .alert( isPresented:$showAlert){
+                        Alert(
+                            title: Text("Deleting Completed Therapies"),
+                            message: Text("Are you sure you wanna clear completed  therapies list"),
+                            primaryButton: .cancel(Text("No")),
+                            secondaryButton :  .default(Text("Yes").bold()){
+                                realmManager.deleteTasks(completed: false)
+                            }
+                        )
+                    
+                        }
+                }
+            }
             if(!realmManager.toDoTasks.isEmpty){
                 ForEach(realmManager.toDoTasks, id: \.id) {
                     task in
                     if(!task.isInvalidated){
                         TaskRow(task: task)
-                            .swipeActions(edge: .trailing){
-                                Button(role: .destructive){
-                                    realmManager.deleteTask(id: task.id)
-                                } label: {
-                                    Label("Delete",systemImage: "Trash")
-                                }
-                            }
                     }
             }
             } else{
                 Text("You don't have any therapies to do").foregroundColor(.gray.opacity(0.6))
             }
-            
-            Text("Completed Therapies").bold().foregroundColor(.gray).padding(.vertical,5)
-            
+            HStack{
+                Text("Completed Therapies").bold().foregroundColor(.gray).padding(.top,5).padding(.horizontal,10)
+                
+                if(!realmManager.completedTasks.isEmpty){
+                Image(systemName:"trash")
+                    .foregroundColor(.red)
+                    .padding()
+                    .onTapGesture {
+                            showAlert = true
+                  
+                    }
+                    .alert( isPresented:$showAlert){
+                        Alert(
+                            title: Text("Deleting Completed Therapies"),
+                            message: Text("Are you sure you wanna clear completed  therapies list"),
+                            primaryButton: .cancel(Text("No")),
+                            secondaryButton :  .default(Text("Yes").bold()){
+                                realmManager.deleteTasks(completed: true)
+                            }
+                        )
+                    
+                        }
+                }
+                
+            }
             if(!realmManager.completedTasks.isEmpty){
                 ForEach(realmManager.completedTasks, id: \.id) {
                     task in
                     if(!task.isInvalidated){
                         TaskRow(task: task)
-                            .swipeActions(edge: .trailing){
-                                Button(role: .destructive){
-                                    realmManager.deleteTask(id: task.id)
-                                } label: {
-                                    Label("Delete",systemImage: "Trash")
-                                }
-                            }
-                         
+                            .opacity(0.7)
                     }
                   
                 }

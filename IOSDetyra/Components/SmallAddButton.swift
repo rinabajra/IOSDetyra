@@ -9,7 +9,7 @@ struct SmallAddButton: View {
     var body: some View {
         ZStack(alignment: .center){
             Circle().frame(width:50 )
-                .foregroundColor(Color(hue: 0.50, saturation: 0.6, brightness: 0.4))
+                .foregroundColor(Color(hue: 0.50, saturation: 0.6, brightness: 0.4).opacity(0.7))
             Text("+")
                 .font(.title)
                 .foregroundColor(.white)

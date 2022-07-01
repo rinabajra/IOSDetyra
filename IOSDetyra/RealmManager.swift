@@ -11,6 +11,7 @@ class RealmManager: ObservableObject{
     private(set) var localRealm: Realm?
     @Published private(set) var toDoTasks: [Task]=[]
     @Published private(set) var completedTasks: [Task]=[]
+    @Published private(set) var allTask: [Task]=[]
 
     init(){
         openRealm()
@@ -54,9 +55,11 @@ class RealmManager: ObservableObject{
             let allTasks = localRealm.objects(Task.self).sorted(byKeyPath: "completed")
             toDoTasks = []
             completedTasks = []
+            allTask=[]
             
             allTasks.forEach{
            task in
+                allTask.append(task)
                 if(task.completed){
                     completedTasks.append(task)
                 }else{
@@ -107,4 +110,24 @@ class RealmManager: ObservableObject{
             }
         }
     }
+    
+    func deleteTasks(completed: Bool) {
+        if let localRealm = localRealm {
+            do{
+         
+
+                try! localRealm.write{
+                    
+                    localRealm.delete(completed ? completedTasks : toDoTasks)
+
+                    getTasks()
+                    print("Deleted completed == \(completed) tasks ")
+
+                }
+
+            }
+            
+        }
+    }
+    
 }

@@ -8,6 +8,7 @@ import SwiftUI
 struct TaskRow: View {
     @EnvironmentObject var realmManager: RealmManager
     @State var showAlert: Bool = false
+    @State private var showTherapyView = false
     var task: Task
     
     var body: some View {
@@ -17,15 +18,22 @@ struct TaskRow: View {
                     .cornerRadius(20)
                     .frame(width: 300, height: 200)
                     .scaledToFit()
+                    .onTapGesture {
+                        showTherapyView.toggle()
+                    }
+                    .sheet(isPresented: $showTherapyView){
+                        TherapyView(title: task.title, image: task.image, description: task.descr, completed: task.completed)
+                        .environmentObject(realmManager)
+                    }
                 
                 VStack(alignment: .leading) {
                         Text(task.title)
                         .bold()
-                        .foregroundColor(.black.opacity(0.8))
+                        .foregroundColor(.black.opacity(0.9))
                            
                         Text(task.descr.prefix(10))
                         .font(.caption)
-                        .foregroundColor(.black.opacity(0.8))
+                        .foregroundColor(.black.opacity(0.9))
                        }
                        .padding()
                        .frame(width: 300,height: 80, alignment: .leading)

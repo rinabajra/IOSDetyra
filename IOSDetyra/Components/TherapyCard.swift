@@ -6,9 +6,10 @@ import SwiftUI
 
 struct TherapyCard: View {
     @EnvironmentObject var realmManager: RealmManager
+    @State private var showTherapyView = false
     var therapy: Therapy
-    @State private var added = false
-    
+    var added: Bool
+
     
     var body: some View {
         HStack(spacing:20) {
@@ -20,13 +21,22 @@ struct TherapyCard: View {
                     .cornerRadius(20)
                     .frame(width: 300, height: 200)
                     .scaledToFit()
+                    .onTapGesture {
+                        showTherapyView.toggle()
+                    }
+                    .sheet(isPresented: $showTherapyView){
+                        TherapyView(title: therapy.title, image: therapy.image, description: therapy.descr)
+                        .environmentObject(realmManager)
+                    }
                 
                 VStack(alignment: .leading) {
                 Text(therapy.title)
                     .bold()
+                    .foregroundColor(.black.opacity(0.9))
                 
                 Text(therapy.descr.prefix(10) + "...")
                     .font(.caption)
+                    .foregroundColor(.black.opacity(0.9))
             }
             .padding()
             .frame(width: 300, alignment: .leading)
@@ -36,10 +46,10 @@ struct TherapyCard: View {
                 }
                 
                 Button {
-                    if(!added){
+                    if (!added) {
                         realmManager.addTask(taskTitle: therapy.title, description: therapy.descr, image: therapy.image)
-                        added = true
-                        }
+                    }
+                
                 } label: {
                     Image(systemName: added ?
                           "checkmark.circle" : "circle")
