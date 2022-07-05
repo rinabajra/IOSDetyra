@@ -28,14 +28,13 @@ Aplikacioni ka per qellim qe perdoruesi te kete mundesi ti aplikoj, ti klasifiko
 
 Disa pamje te aplikacionit: 
 
-![CleanShot 2022-07-02 at 00 49 24@2x](https://user-images.githubusercontent.com/57239861/177382213-96d1e6ee-7136-4572-9515-77b9e04d6023.png)
-![CleanShot 2022-07-02 at 00 52 20@2x](https://user-images.githubusercontent.com/57239861/177382307-15829bed-c305-4a19-8d48-b2d23de0d51d.png)
-![CleanShot 2022-07-02 at 00 49 31@2x](https://user-images.githubusercontent.com/57239861/177382311-2fef4f93-44c8-470f-992e-9a529ce19fa0.png)
-![CleanShot 2022-07-02 at 00 49 31@2x](https://user-images.githubusercontent.com/57239861/177382374-48869415-1fce-4bad-8245-4a4ecee91a20.png)
-![CleanShot 2022-07-02 at 00 51 37@2x](https://user-images.githubusercontent.com/57239861/177382519-faa8461e-2607-4c64-98a3-b944b43ef266.png)
-![CleanShot 2022-07-02 at 00 51 47@2x](https://user-images.githubusercontent.com/57239861/177382559-b7ae9152-57b5-4119-a2e4-f04b738206d9.png)
-![CleanShot 2022-07-02 at 00 51 47@2x](https://user-images.githubusercontent.com/57239861/177382580-692eba08-7b0a-4f9f-a170-86c312a3c6e4.png)
-![CleanShot 2022-07-02 at 00 51 56@2x](https://user-images.githubusercontent.com/57239861/177382606-aad28109-7952-4e71-9904-5d5c9088d00e.png)
+![CleanShot 2022-07-05 at 19 27 17@2x](https://user-images.githubusercontent.com/57239861/177383238-3ebbcdfd-f1ed-4ccb-833b-4e7f6c3dcf46.png)
+![CleanShot 2022-07-05 at 19 24 23@2x](https://user-images.githubusercontent.com/57239861/177382780-197a0789-b126-4f30-b779-365d9831caf2.png)
+![CleanShot 2022-07-05 at 19 24 52@2x](https://user-images.githubusercontent.com/57239861/177382842-eaf98937-a3a7-4d7e-9331-b568b152928c.png)
+![CleanShot 2022-07-05 at 19 25 18@2x](https://user-images.githubusercontent.com/57239861/177382921-6b28ed00-8c75-408a-a014-2c08801fd6df.png)
+![CleanShot 2022-07-05 at 19 25 47@2x](https://user-images.githubusercontent.com/57239861/177383011-c65e7811-0dda-46e1-938a-e24b14a182ae.png)
+![CleanShot 2022-07-05 at 19 26 13@2x](https://user-images.githubusercontent.com/57239861/177383076-330647d0-3611-4b72-be69-1030108a5ebe.png)
+![CleanShot 2022-07-05 at 19 26 43@2x](https://user-images.githubusercontent.com/57239861/177383147-1f916e97-40cc-417b-a5a3-b37aa9f60320.png)
 
 
 
